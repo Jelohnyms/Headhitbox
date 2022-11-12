@@ -1,0 +1,38 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("Tutorial", "Ocean")
+
+-- Tabs
+
+local Tab1 = Window:NewTab("Example")
+local Tab1Section = Tab1:NewSection("This Is An Example")
+
+-- Buttons/Windows/Idk
+
+Tab1Section:NewButton("Inf Jumps", "Enables Inf Jumps", function()
+    local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+end)
+
+Tab1Section:NewToggle("Fov", "Changes Fov", function(state)
+    if state then
+        if v.Character:FindFirstChild('Head') then
+    v.Character.Head.CanCollide = false
+    v.Character.Head.Transparency = 0.5
+        local Head = v.Character:FindFirstChild('Head')
+        Head.Size = Vector3.new(10,7,7)
+        Head.Size = Size
+    else
+    v.Character.Head.CanCollide = true
+    v.Character.Head.Transparency = 0.5
+        local Head = v.Character:FindFirstChild('Head')
+        Head.Size = Vector3.new(2,1,1)
+        Head.Size = Size
+   end)
+
+Tab1Section:NewSlider("Speed", "Sussy Speed", 250, 120, function(v)
+    game.Players.LocalPlayer.Character.Head.Size = Vector3.new(2,1,1)
+   end)
